@@ -4,7 +4,6 @@ from cgi import FieldStorage
 import time
 
 import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
 
 from sklearn.linear_model import LinearRegression
@@ -70,6 +69,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         plt.yticks(np.arange(10, 110, 10))
         plt.xticks(np.arange(-1, 11, 1))
         plt.savefig('img/model.png')
+        plt.close('all')
         
         # Render
         head = open('head.html', 'rb')
@@ -111,6 +111,7 @@ plt.plot(xt, yt,'ro-')
 plt.yticks(np.arange(10, 110, 10))
 plt.xticks(np.arange(-1, 11, 1))
 plt.savefig('img/model.png')
+plt.close('all')
 
 try:
     httpd = HTTPServer((IP_ADDRESS, PORT), SimpleHTTPRequestHandler)
