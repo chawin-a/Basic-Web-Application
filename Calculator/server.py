@@ -2,7 +2,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
 from cgi import FieldStorage
 
-IP_ADDRESS = 'localhost'
+IP_ADDRESS = '0.0.0.0'
 PORT = 8000
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
